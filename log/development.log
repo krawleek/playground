@@ -7260,3 +7260,117 @@ ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constrain
   
 app/controllers/posts_controller.rb:31:in `block in create'
 app/controllers/posts_controller.rb:30:in `create'
+Started GET "/" for ::1 at 2020-12-21 14:42:17 +0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 268)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 186ms (Views: 152.4ms | ActiveRecord: 1.6ms | Allocations: 20275)
+
+
+Started GET "/posts" for ::1 at 2020-12-21 14:42:22 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:17
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 1394)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 91ms (Views: 35.6ms | ActiveRecord: 1.3ms | Allocations: 13064)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-21 14:42:27 +0300
+Processing by PostsController#new as HTML
+Filter chain halted as #<Proc:0x00007f9be6ace2a0 /Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-6.0.3.3/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 271)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-21 14:42:29 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 41.0ms | Allocations: 7061)
+  Rendered posts/new.html.erb within layouts/application (Duration: 42.5ms | Allocations: 7399)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 82ms (Views: 51.8ms | ActiveRecord: 1.1ms | Allocations: 17514)
+
+
+Started POST "/posts" for ::1 at 2020-12-21 14:43:05 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Hbxcx1EV/k7o719fJGjd2r1o7tEvVPy97fYCQYHOOORZeLbfRSEX4hkoJLHzP+5IZGZ2+tXWst/LwiAEM4ubeg==", "post"=>{"user_id"=>"3", "name"=>"проверка", "title"=>"ХОРОШО ТО КАК", "author"=>"УМНИЧКА", "content"=>"<p>rря</p>"}, "commit"=>"Create Post"}
+Filter chain halted as #<Proc:0x00007f9be6ace2a0 /Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-6.0.3.3/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 354)
+
+
+Started POST "/posts" for ::1 at 2020-12-21 14:43:05 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Hbxcx1EV/k7o719fJGjd2r1o7tEvVPy97fYCQYHOOORZeLbfRSEX4hkoJLHzP+5IZGZ2+tXWst/LwiAEM4ubeg==", "post"=>{"user_id"=>"3", "name"=>"проверка", "title"=>"ХОРОШО ТО КАК", "author"=>"УМНИЧКА", "content"=>"<p>rря</p>"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[31mUnpermitted parameter: :user_id[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[36mPost Create (5.9ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "проверка"], ["title", "ХОРОШО ТО КАК"], ["content", "<p>rря</p>"], ["created_at", "2020-12-21 11:43:05.327390"], ["updated_at", "2020-12-21 11:43:05.327390"], ["author", "УМНИЧКА"]]
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 6.2ms | Allocations: 5633)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: posts.user_id):
+  
+app/controllers/posts_controller.rb:31:in `block in create'
+app/controllers/posts_controller.rb:30:in `create'
+Started GET "/posts/new" for ::1 at 2020-12-21 14:48:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 8.5ms | Allocations: 2309)
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.0ms | Allocations: 2392)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 119ms (Views: 54.6ms | ActiveRecord: 1.4ms | Allocations: 20107)
+
+
+Started POST "/posts" for ::1 at 2020-12-21 14:48:54 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"9g++Nth/xNbKa5NFZtOz07noyFfcFTXX6U77GOgWg98Ikt1rpKxCI/opO+AxZKQ2wxoPDFo5BcDMMXKkV2HkIw==", "post"=>{"user_id"=>"3", "name"=>"ДРАТУТИ", "title"=>"password", "author"=>"раззздватри", "content"=>"<p>кря</p>"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "ДРАТУТИ"], ["title", "password"], ["content", "<p>кря</p>"], ["created_at", "2020-12-21 11:48:54.146759"], ["updated_at", "2020-12-21 11:48:54.146759"], ["author", "раззздватри"], ["user_id", 3]]
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 34ms (ActiveRecord: 5.2ms | Allocations: 4835)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-21 14:48:54 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:32
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered comments/_form.html.erb (Duration: 69.0ms | Allocations: 5367)
+  Rendered posts/show.html.erb within layouts/application (Duration: 154.4ms | Allocations: 20011)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 228ms (Views: 219.9ms | ActiveRecord: 2.9ms | Allocations: 24726)
+
+
