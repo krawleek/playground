@@ -10,7 +10,12 @@
       </ul>
     </div>
   <% end %>
-  <%= form.text_field :user_id %>
+  <div class="field">
+    <%= form.label :category_id %>
+    <%= form.select :category_id, Category.pluck(:name, :id) %>
+ </div>
+
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
