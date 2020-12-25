@@ -7374,3 +7374,1472 @@ Processing by PostsController#show as HTML
 Completed 200 OK in 228ms (Views: 219.9ms | ActiveRecord: 2.9ms | Allocations: 24726)
 
 
+Started GET "/" for ::1 at 2020-12-25 00:17:38 +0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 412)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 96ms (Views: 83.0ms | ActiveRecord: 1.2ms | Allocations: 22728)
+
+
+Started GET "/about" for ::1 at 2020-12-25 00:17:41 +0300
+Processing by AboutController#index as HTML
+  Rendering about/index.html.erb within layouts/application
+  Rendered about/index.html.erb within layouts/application (Duration: 0.9ms | Allocations: 135)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.2ms | Allocations: 5718)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:17:42 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:17
+  Rendered posts/index.html.erb within layouts/application (Duration: 24.6ms | Allocations: 6141)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 86ms (Views: 37.7ms | ActiveRecord: 1.5ms | Allocations: 17787)
+
+
+Started DELETE "/posts/1" for ::1 at 2020-12-25 00:17:48 +0300
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zDOROnFJAgXbPJl/I/y3FiqMdDwGkjjtWWJpzwSS0jZziB8sjb13lmkNJGIBYRmftzotD7Qpb1O5Jx1HYMVCzg==", "id"=>"1"}
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mPost Destroy (1.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 37ms (ActiveRecord: 4.4ms | Allocations: 11531)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:17:48 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:17
+  Rendered posts/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 18ms (Views: 16.7ms | ActiveRecord: 0.4ms | Allocations: 5464)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 00:17:50 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 40.9ms | Allocations: 7006)
+  Rendered posts/new.html.erb within layouts/application (Duration: 42.3ms | Allocations: 7343)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 0.2ms | Allocations: 12839)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 00:17:50 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/_form.html.erb (Duration: 5.2ms | Allocations: 2197)
+  Rendered posts/new.html.erb within layouts/application (Duration: 5.5ms | Allocations: 2279)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 0.1ms | Allocations: 7610)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 00:18:02 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"GwT+FXgCU+74WpWLHiyPnWUtCzn77Nea9IOHM+JlNHWkv3ADhPYmfUprKJY8sSEU+JtSCklXgCQUxvO7hjKkjQ==", "post"=>{"user_id"=>"3", "name"=>"проверка", "title"=>"ХОРОШО ТО КАК", "author"=>"раззздватри", "content"=>"<p>nnn</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007ffa6cd5cb40 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20201225-58655-ilqya8.png>, @original_filename="A4 - 1.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"A4 - 1.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "image", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "проверка"], ["title", "ХОРОШО ТО КАК"], ["content", "<p>nnn</p>"], ["created_at", "2020-12-24 21:18:03.431208"], ["updated_at", "2020-12-24 21:18:03.431208"], ["author", "раззздватри"], ["image", "A4_-_1.png"], ["user_id", 3]]
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 877ms (ActiveRecord: 2.3ms | Allocations: 11196)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 00:18:03 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:26
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:32
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  Rendered comments/_form.html.erb (Duration: 32.3ms | Allocations: 5536)
+  Rendered posts/show.html.erb within layouts/application (Duration: 44.1ms | Allocations: 10651)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 60.5ms | ActiveRecord: 1.0ms | Allocations: 15202)
+
+
+Started POST "/posts/1/likes" for ::1 at 2020-12-25 00:18:42 +0300
+Processing by LikesController#create as HTML
+  Parameters: {"authenticity_token"=>"6w951+JY2wHDiSTPQr2Bfq9KJ+G0IevnbcB2RUPDVf5UtPfBHqyuknG4mdJgIC/3Mvx+0gaavFmNhQLNJ5TFBg==", "post_id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:29:in `find_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:17:in `already_liked?'
+  [1m[36mLike Exists? (0.9ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."user_id" = ? AND "likes"."post_id" = ? LIMIT ?[0m  [["user_id", 3], ["post_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:18:in `already_liked?'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/likes_controller.rb:8:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/likes_controller.rb:8:in `create'
+  [1m[36mLike Create (1.2ms)[0m  [1m[32mINSERT INTO "likes" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["user_id", 3], ["created_at", "2020-12-24 21:18:42.651151"], ["updated_at", "2020-12-24 21:18:42.651151"]]
+  ↳ app/controllers/likes_controller.rb:8:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/likes_controller.rb:8:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 28ms (ActiveRecord: 4.5ms | Allocations: 10105)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 00:18:42 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:26
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:26
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:32
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:32
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 2.0ms | Allocations: 608)
+  Rendered posts/show.html.erb within layouts/application (Duration: 14.0ms | Allocations: 5074)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.8ms | Allocations: 9566)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:20:20 +0300
+  [1m[35m (4.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:17
+  Rendered posts/index.html.erb within layouts/application (Duration: 21.6ms | Allocations: 6590)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 131ms (Views: 79.0ms | ActiveRecord: 2.8ms | Allocations: 30918)
+
+
+Started DELETE "/posts/1" for ::1 at 2020-12-25 00:20:23 +0300
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5Gy+klCLhVYIZkbaeq2HnPGtQT3WtxSDdw48eavLNi1b1zCErH/wxbpX+8dYMCkVbBsYDmQMQz2XS0jxz5ym1Q==", "id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mLike Load (5.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mLike Destroy (4.3ms)[0m  [1m[31mDELETE FROM "likes" WHERE "likes"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[36mPost Destroy (0.3ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:58:in `destroy'
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 72ms (ActiveRecord: 12.9ms | Allocations: 15831)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:20:23 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:17
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 642)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 31ms (Views: 28.8ms | ActiveRecord: 0.4ms | Allocations: 5477)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPost Load (2.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCategories (20201224213424)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" text, "display_in_navbar" boolean DEFAULT 1, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201224213424"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddCategoryToPost (20201224213504)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "title" varchar DEFAULT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "author" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "user_id" integer NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[32mINSERT INTO "aposts" ("id","name","title","content","created_at","updated_at","author","image","user_id")
+                     SELECT "id","name","title","content","created_at","updated_at","author","image","user_id" FROM "posts"[0m
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "title" varchar DEFAULT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "author" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "user_id" integer NOT NULL, "category_id" integer NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "posts" ("id","name","title","content","created_at","updated_at","author","image","user_id")
+                     SELECT "id","name","title","content","created_at","updated_at","author","image","user_id" FROM "aposts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_category_id" ON "posts" ("category_id")[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aposts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "title" varchar DEFAULT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "author" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "user_id" integer NOT NULL, "category_id" integer NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aposts_on_category_id" ON "aposts" ("category_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE  INDEX "tindex_aposts_on_user_id" ON "aposts" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "aposts" ("id","name","title","content","created_at","updated_at","author","image","user_id","category_id")
+                     SELECT "id","name","title","content","created_at","updated_at","author","image","user_id","category_id" FROM "posts"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "posts"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer NOT NULL PRIMARY KEY, "name" varchar DEFAULT NULL, "title" varchar DEFAULT NULL, "content" text DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "author" varchar DEFAULT NULL, "image" varchar DEFAULT NULL, "user_id" integer NOT NULL, "category_id" integer NOT NULL, CONSTRAINT "fk_rails_5b5ddfd518"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+, CONSTRAINT "fk_rails_9b1b26f040"
+FOREIGN KEY ("category_id")
+  REFERENCES "categories" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_category_id" ON "posts" ("category_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("id","name","title","content","created_at","updated_at","author","image","user_id","category_id")
+                     SELECT "id","name","title","content","created_at","updated_at","author","image","user_id","category_id" FROM "aposts"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "aposts"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201224213504"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/posts" for ::1 at 2020-12-25 00:41:43 +0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mPost Load (1.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 16.5ms | Allocations: 2472)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (4.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 129ms (Views: 90.7ms | ActiveRecord: 7.8ms | Allocations: 17123)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-25 00:41:46 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 55.5ms | Allocations: 4941)
+  Rendered categories/new.html.erb within layouts/application (Duration: 60.8ms | Allocations: 5276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 100ms (Views: 86.0ms | ActiveRecord: 2.4ms | Allocations: 14595)
+
+
+Started POST "/categories" for ::1 at 2020-12-25 00:42:01 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"x/BtEXh3sgKj3U2BpmkkXn7thJkam1Mh4qhiHLUqx1E+YBgnDqpHt8JRfc4FZvJYw2ZfifS22jVMN9+R4SrCPQ==", "category"=>{"name"=>"места", "description"=>"здесь собраны самые уютные места москвы", "display_in_navbar"=>"1"}, "commit"=>"Create Category"}
+  [1m[35m (0.8ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[36mCategory Create (1.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "места"], ["description", "здесь собраны самые уютные места москвы"], ["created_at", "2020-12-24 21:42:01.093333"], ["updated_at", "2020-12-24 21:42:01.093333"]]
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/categories/1
+Completed 302 Found in 19ms (ActiveRecord: 3.1ms | Allocations: 2890)
+
+
+Started GET "/categories/1" for ::1 at 2020-12-25 00:42:01 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 20ms (Views: 15.4ms | ActiveRecord: 0.6ms | Allocations: 6633)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:42:07 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 1031)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.6ms | Allocations: 6679)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:42:07 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 6274)
+
+
+Started GET "/categories/1" for ::1 at 2020-12-25 00:42:10 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 1.0ms | Allocations: 6154)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:42:12 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 767)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 27ms (Views: 24.7ms | ActiveRecord: 0.7ms | Allocations: 6278)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:42:18 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:6
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:21
+  Rendered posts/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1325)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.6ms | Allocations: 6870)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 00:42:19 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 36.0ms | Allocations: 6953)
+  Rendered posts/new.html.erb within layouts/application (Duration: 37.4ms | Allocations: 7279)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (4.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 89ms (Views: 62.6ms | ActiveRecord: 5.1ms | Allocations: 17596)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 00:42:28 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"ciJo8EePB9g+QbMEo6/PD0csldXW6iH4qrofCC598Seyo+jFYzgUhFm1dHu2d2dXwL1rLRb6+ssaswx8+W90Lw==", "post"=>{"category_id"=>"1", "user_id"=>"3", "name"=>"проверка", "title"=>"указываем", "author"=>"раззздватри", "content"=>"<p>кря</p>"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 2373)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'category_id' for Post.):
+  
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for ::1 at 2020-12-25 00:42:43 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"KMg/hKvrm/DUeDijptB0N5xKT0x7HQ812RsH15+/YgWXc7GSVx/uY2ZJhb6ETdq+AfwWf8mmWIs5XnNf++jy/Q==", "post"=>{"category_id"=>"1", "user_id"=>"3", "name"=>"проверка", "title"=>"указываем", "author"=>"раззздватри", "content"=>"<p>кря</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf4a367e20 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20201225-58879-1pmq4ih.png>, @original_filename="A4 - 1.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"A4 - 1.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 565ms (ActiveRecord: 0.2ms | Allocations: 5438)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'category_id' for Post.):
+  
+app/controllers/posts_controller.rb:33:in `create'
+Started POST "/posts" for ::1 at 2020-12-25 00:43:17 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"KMg/hKvrm/DUeDijptB0N5xKT0x7HQ812RsH15+/YgWXc7GSVx/uY2ZJhb6ETdq+AfwWf8mmWIs5XnNf++jy/Q==", "post"=>{"category_id"=>"1", "user_id"=>"3", "name"=>"проверка", "title"=>"указываем", "author"=>"раззздватри", "content"=>"<p>кря</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf49107c30 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20201225-58879-w1szyo.png>, @original_filename="A4 - 1.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"A4 - 1.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[31mUnpermitted parameter: :category_id[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 9.0ms | Allocations: 3595)
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3678)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 582ms (Views: 25.8ms | ActiveRecord: 3.2ms | Allocations: 36379)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 00:43:20 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"06sazLT0BKufFTYfM+SxU26zEk4QiGNQxlsTQG+gXzFsEJTaSABxOC0kiwIReR/a8wVLfaIzNO4mHmfIC/fPyQ==", "post"=>{"category_id"=>"1", "user_id"=>"3", "name"=>"проверка", "title"=>"указываем", "author"=>"раззздватри", "content"=>"<p>кря</p>"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[31mUnpermitted parameter: :category_id[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 10.2ms | Allocations: 3162)
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 37ms (Views: 28.5ms | ActiveRecord: 0.6ms | Allocations: 10578)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 00:43:23 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"XTX+MZc4JybqXtpeJx84iCjnzPxwNrNb6x3vzYZop5fijnAna8xStVhvZ0MFgpYBtVGVz8KN5OULWJtF4j83bw==", "post"=>{"category_id"=>"1", "user_id"=>"3", "name"=>"проверка", "title"=>"указываем", "author"=>"раззздватри", "content"=>"<p>кря</p>"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+[31mUnpermitted parameter: :category_id[0m
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 20.3ms | Allocations: 3162)
+  Rendered posts/new.html.erb within layouts/application (Duration: 20.6ms | Allocations: 3244)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 67ms (Views: 52.7ms | ActiveRecord: 0.7ms | Allocations: 11055)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:47:40 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:18
+  Rendered posts/index.html.erb within layouts/application (Duration: 5.8ms | Allocations: 1621)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 72ms (Views: 58.0ms | ActiveRecord: 2.4ms | Allocations: 15751)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-25 00:47:41 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 3.0ms | Allocations: 1312)
+  Rendered categories/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1641)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 29ms (Views: 17.5ms | ActiveRecord: 0.9ms | Allocations: 10662)
+
+
+Started POST "/categories" for ::1 at 2020-12-25 00:47:54 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"ZpTL3bGCUDv6wJEzkDkjq7Z3fV1ozLRpr18wytKTXMOfBL7rx1+ljptMoXwzNvWtC/ymTYbhPX0BwI1HhpNZrw==", "category"=>{"name"=>"места", "description"=>"здесь собраны самые уютные места москвы", "display_in_navbar"=>"1"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "места"], ["description", "здесь собраны самые уютные места москвы"], ["created_at", "2020-12-24 21:47:54.827081"], ["updated_at", "2020-12-24 21:47:54.827081"]]
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/categories/2
+Completed 302 Found in 9ms (ActiveRecord: 2.5ms | Allocations: 2784)
+
+
+Started GET "/categories/2" for ::1 at 2020-12-25 00:47:54 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 4.6ms | Allocations: 269)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.6ms | Allocations: 5905)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:47:58 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.5ms | Allocations: 6140)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:47:58 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 17ms (Views: 15.9ms | ActiveRecord: 0.3ms | Allocations: 5710)
+
+
+Started DELETE "/categories/1" for ::1 at 2020-12-25 00:48:02 +0300
+Processing by CategoriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4R4orUEP7MpNLc03QMTxj17mTmv2/NAlWwdcE9qXkJlepaa7vfuZWf8ccCpiWV8Gw1AXWERHh5u7QiibvsAAYQ==", "id"=>"1"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:57:in `destroy'
+  [1m[36mCategory Destroy (7.9ms)[0m  [1m[31mDELETE FROM "categories" WHERE "categories"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/categories_controller.rb:57:in `destroy'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:57:in `destroy'
+Redirected to http://localhost:3000/categories
+Completed 302 Found in 18ms (ActiveRecord: 9.1ms | Allocations: 2779)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:48:02 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 1.8ms | Allocations: 769)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms | Allocations: 5582)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-25 00:48:04 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 3.3ms | Allocations: 913)
+  Rendered categories/new.html.erb within layouts/application (Duration: 3.6ms | Allocations: 995)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 14ms (Views: 13.6ms | ActiveRecord: 0.1ms | Allocations: 5807)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-25 00:48:04 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 2.2ms | Allocations: 910)
+  Rendered categories/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 5808)
+
+
+Started POST "/categories" for ::1 at 2020-12-25 00:48:34 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"cFyHKi4WiMq8XyhRT2oLHCdey3EUxKD+dVEg2OiZkZbP5wk80uL9WQ5ulUxt96WVuuiSQqZ/90CVFFRQjM4Bbg==", "category"=>{"name"=>"вещи", "description"=>"здесь собраны самые крутые предложения от московских мастеров ", "display_in_navbar"=>"1"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[36mCategory Create (0.9ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "вещи"], ["description", "здесь собраны самые крутые предложения от московских мастеров "], ["created_at", "2020-12-24 21:48:34.394934"], ["updated_at", "2020-12-24 21:48:34.394934"]]
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/categories/3
+Completed 302 Found in 9ms (ActiveRecord: 2.1ms | Allocations: 2680)
+
+
+Started GET "/categories/3" for ::1 at 2020-12-25 00:48:34 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.7ms | Allocations: 5449)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:48:36 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 5701)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:48:36 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 16ms (Views: 15.4ms | ActiveRecord: 0.4ms | Allocations: 5683)
+
+
+Started GET "/categories/new" for ::1 at 2020-12-25 00:48:37 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 1.8ms | Allocations: 910)
+  Rendered categories/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 992)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.1ms | Allocations: 5816)
+
+
+Started POST "/categories" for ::1 at 2020-12-25 00:49:02 +0300
+Processing by CategoriesController#create as HTML
+  Parameters: {"authenticity_token"=>"rKYE+opv3pIiTwA8HBWvTqtbzG3flidx7dHDjKwgOlJVNnHM/LIrJ0PDMHO/GnlIFtAXfTG7rmVDTn4B+CA/Pg==", "category"=>{"name"=>"события", "description"=>"тут мы собираем самые интересные ивенты ", "display_in_navbar"=>"1"}, "commit"=>"Create Category"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[36mCategory Create (1.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "события"], ["description", "тут мы собираем самые интересные ивенты "], ["created_at", "2020-12-24 21:49:02.088275"], ["updated_at", "2020-12-24 21:49:02.088275"]]
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/categories_controller.rb:30:in `block in create'
+Redirected to http://localhost:3000/categories/4
+Completed 302 Found in 11ms (ActiveRecord: 3.5ms | Allocations: 2718)
+
+
+Started GET "/categories/4" for ::1 at 2020-12-25 00:49:02 +0300
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 85)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.3ms | Allocations: 5429)
+
+
+Started GET "/categories/4" for ::1 at 2020-12-25 00:54:04 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CategoriesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/categories_controller.rb:67:in `set_category'
+  Rendering categories/show.html.erb within layouts/application
+  Rendered categories/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 274)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 71ms (Views: 44.1ms | ActiveRecord: 2.3ms | Allocations: 16873)
+
+
+Started GET "/categories" for ::1 at 2020-12-25 00:54:11 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 1357)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.6ms | Allocations: 6302)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 00:54:18 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:18
+  Rendered posts/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1405)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:21
+Completed 200 OK in 26ms (Views: 14.6ms | ActiveRecord: 1.3ms | Allocations: 9605)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 00:54:20 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 16.9ms | Allocations: 3591)
+  Rendered posts/new.html.erb within layouts/application (Duration: 18.3ms | Allocations: 3917)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 51ms (Views: 28.9ms | ActiveRecord: 0.8ms | Allocations: 14230)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 00:54:34 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"a0WntlkkHXlVBm86RYPTk2D5OT99LZsqlOhNm4cf30irxCeDfZMOJTLyqEVQW3vL52jHx709QBkk4V7vUA1aQA==", "post"=>{"category_id"=>"2", "user_id"=>"3", "name"=>"проверка", "title"=>"указываем", "author"=>"автора", "content"=>"<p>123</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf4ccdc6c0 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20201225-58879-11rtee9.png>, @original_filename="домики на лонгрид 3.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"\xD0\xB4\xD0\xBE\xD0\xBC\xD0\xB8\xD0\xBA\xD0\xB8 \xD0\xBD\xD0\xB0 \xD0\xBB\xD0\xBE\xD0\xBD\xD0\xB3\xD1\x80\xD0\xB8\xD0\xB4 3.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[36mPost Create (0.6ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "image", "user_id", "category_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "проверка"], ["title", "указываем"], ["content", "<p>123</p>"], ["created_at", "2020-12-24 21:54:35.192081"], ["updated_at", "2020-12-24 21:54:35.192081"], ["author", "автора"], ["image", "домики_на_лонгрид_3.png"], ["user_id", 3], ["category_id", 2]]
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:31:in `block in create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 460ms (ActiveRecord: 2.1ms | Allocations: 10573)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 00:54:35 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:68:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:40
+  Rendered comments/_form.html.erb (Duration: 12.1ms | Allocations: 5073)
+  Rendered posts/show.html.erb within layouts/application (Duration: 48.9ms | Allocations: 17234)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 2.8ms | Allocations: 21908)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 00:57:43 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:38
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:40
+  Rendered comments/_form.html.erb (Duration: 18.2ms | Allocations: 4824)
+  Rendered posts/show.html.erb within layouts/application (Duration: 97.5ms | Allocations: 23376)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 198ms (Views: 120.5ms | ActiveRecord: 7.4ms | Allocations: 43854)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 02:53:53 +0300
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 61.2ms | Allocations: 14318)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (17.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 373ms (Views: 250.8ms | ActiveRecord: 23.6ms | Allocations: 48005)
+
+
+Started GET "/" for ::1 at 2020-12-25 16:16:17 +0300
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 153ms (Views: 136.5ms | ActiveRecord: 3.8ms | Allocations: 28505)
+
+
+Started GET "/users" for ::1 at 2020-12-25 16:16:34 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 58ms (Views: 53.3ms | ActiveRecord: 0.6ms | Allocations: 7338)
+
+
+Started GET "/users/2" for ::1 at 2020-12-25 16:16:56 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 128)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 56ms (Views: 50.5ms | ActiveRecord: 0.7ms | Allocations: 6605)
+
+
+Started GET "/users/3" for ::1 at 2020-12-25 16:17:01 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 23ms (Views: 17.5ms | ActiveRecord: 0.7ms | Allocations: 6197)
+
+
+Started GET "/users/3" for ::1 at 2020-12-25 16:17:39 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1086)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 28ms (Views: 25.2ms | ActiveRecord: 0.5ms | Allocations: 7772)
+
+
+Started GET "/users" for ::1 at 2020-12-25 16:17:43 +0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.html.erb:11
+  Rendered users/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 878)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:23
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.5ms | Allocations: 6644)
+
+
+Started GET "/users/2" for ::1 at 2020-12-25 16:17:44 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (Duration: 4.4ms | Allocations: 891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 26ms (Views: 20.4ms | ActiveRecord: 2.1ms | Allocations: 6189)
+
+
+Started GET "/users/3" for ::1 at 2020-12-25 16:17:49 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  Rendered users/show.html.erb within layouts/application (Duration: 3.1ms | Allocations: 925)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 19ms (Views: 16.0ms | ActiveRecord: 0.7ms | Allocations: 6235)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateFavorites (20201225132810)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "favorites" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "post_id" integer NOT NULL, "user_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_dcaf44a136"
+FOREIGN KEY ("post_id")
+  REFERENCES "posts" ("id")
+, CONSTRAINT "fk_rails_d15744e438"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_post_id" ON "favorites" ("post_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_favorites_on_user_id" ON "favorites" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201225132810"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/3" for ::1 at 2020-12-25 16:37:10 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "favorites" ON "posts"."id" = "favorites"."post_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered users/show.html.erb within layouts/application (Duration: 37.1ms | Allocations: 7342)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 370ms (Views: 125.9ms | ActiveRecord: 4.9ms | Allocations: 32726)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 16:37:20 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 21.1ms | Allocations: 8683)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 1.5ms | Allocations: 15114)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 16:37:24 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (1.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered comments/_form.html.erb (Duration: 58.6ms | Allocations: 8338)
+  Rendered posts/show.html.erb within layouts/application (Duration: 117.7ms | Allocations: 19270)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 134ms (Views: 124.5ms | ActiveRecord: 5.4ms | Allocations: 24771)
+
+
+Started POST "/posts/1/favorites" for ::1 at 2020-12-25 16:37:27 +0300
+Processing by FavoritesController#create as HTML
+  Parameters: {"authenticity_token"=>"tt53w9HdRlnTJH7PMnvw67Gw8LK5csNT22hxnXGj+G0jUrljrPJnmvl/WVjipNbxg507bJYJ5rs3LICNJNvIeg==", "post_id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:27:in `find_post'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:23:in `already_favorited?'
+  [1m[36mFavorite Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."user_id" = ? AND "favorites"."post_id" = ? LIMIT ?[0m  [["user_id", 3], ["post_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:24:in `already_favorited?'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[36mFavorite Create (2.2ms)[0m  [1m[32mINSERT INTO "favorites" ("post_id", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["post_id", 1], ["user_id", 3], ["created_at", "2020-12-25 13:37:27.184280"], ["updated_at", "2020-12-25 13:37:27.184280"]]
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/favorites_controller.rb:9:in `create'
+Redirected to http://localhost:3000/posts/1
+Completed 302 Found in 34ms (ActiveRecord: 4.8ms | Allocations: 9986)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 16:37:27 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 2.1ms | Allocations: 608)
+  Rendered posts/show.html.erb within layouts/application (Duration: 38.0ms | Allocations: 7496)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 52ms (Views: 46.8ms | ActiveRecord: 1.5ms | Allocations: 12814)
+
+
+Started GET "/users/1" for ::1 at 2020-12-25 16:37:34 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.2ms | Allocations: 1117)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/users_controller.rb:7:in `show'
+Started GET "/users/2" for ::1 at 2020-12-25 16:37:36 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "favorites" ON "posts"."id" = "favorites"."post_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered users/show.html.erb within layouts/application (Duration: 6.9ms | Allocations: 3206)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 1.6ms | Allocations: 8697)
+
+
+Started GET "/users/3" for ::1 at 2020-12-25 16:37:39 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "favorites" ON "posts"."id" = "favorites"."post_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 3]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered users/show.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3259)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 20ms (Views: 17.5ms | ActiveRecord: 0.9ms | Allocations: 8648)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 16:38:57 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (2.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 3.0ms | Allocations: 630)
+  Rendered posts/show.html.erb within layouts/application (Duration: 26.1ms | Allocations: 7509)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (6.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 58ms (Views: 40.5ms | ActiveRecord: 9.5ms | Allocations: 12842)
+
+
+Started GET "/posts/1" for ::1 at 2020-12-25 16:38:59 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:73:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 1.5ms | Allocations: 608)
+  Rendered posts/show.html.erb within layouts/application (Duration: 26.5ms | Allocations: 7480)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 43ms (Views: 39.1ms | ActiveRecord: 1.5ms | Allocations: 12801)
+
+
+Started GET "/users/2" for ::1 at 2020-12-25 16:39:16 +0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7:in `show'
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:5
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[35mCACHE  (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "favorites" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:9
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" INNER JOIN "favorites" ON "posts"."id" = "favorites"."post_id" WHERE "favorites"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/users/show.html.erb:10
+  Rendered users/show.html.erb within layouts/application (Duration: 9.8ms | Allocations: 3180)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 23ms (Views: 18.9ms | ActiveRecord: 1.1ms | Allocations: 8588)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 16:39:55 +0300
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.9ms | Allocations: 2297)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 39ms (Views: 36.8ms | ActiveRecord: 1.0ms | Allocations: 7969)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 16:39:57 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 35.3ms | Allocations: 6965)
+  Rendered posts/new.html.erb within layouts/application (Duration: 37.1ms | Allocations: 7292)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 54ms (Views: 48.3ms | ActiveRecord: 0.6ms | Allocations: 13526)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 16:42:54 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 14.0ms | Allocations: 3459)
+  Rendered posts/new.html.erb within layouts/application (Duration: 15.4ms | Allocations: 3788)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 71ms (Views: 65.8ms | ActiveRecord: 0.5ms | Allocations: 11364)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 16:42:58 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"cUbT9dstYIGdrxpWIBNR8/BPW+iWkyFQMdYlkwc7cqzO/V3jJ9kVEi+ep0sCjv96bfkC2yQodu7Rk1EbY2ziVA==", "post"=>{"category_id"=>"2", "name"=>"", "title"=>"", "author"=>"", "content"=>""}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 9.9ms | Allocations: 3429)
+  Rendered posts/new.html.erb within layouts/application (Duration: 10.3ms | Allocations: 3511)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 42ms (Views: 25.8ms | ActiveRecord: 1.2ms | Allocations: 14065)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 16:43:16 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"c/KDKPMElWdW3UpDgLfiZ46gzQSrnv+GMRmH4aIteq7MSQ0+D/Dg9OTs916iKkzuExaUNxklqDjRXPNpxnrqVg==", "post"=>{"category_id"=>"2", "name"=>"a", "title"=>"a", "author"=>"a", "content"=>"<p>a</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb7f9e26860 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20201225-77451-1djkapd.jpg>, @original_filename="12.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"12.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 12.8ms | Allocations: 3163)
+  Rendered posts/new.html.erb within layouts/application (Duration: 13.2ms | Allocations: 3245)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 651ms (Views: 30.4ms | ActiveRecord: 1.0ms | Allocations: 16050)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 16:43:22 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"01jAe3e/cVD2RBAuhEDQIaNTxMb6xxnRI3IKv3OLFARs405ti0sEw0R1rTOm3X6oPuWd9Uh8Tm/DN343F9yE/A==", "post"=>{"category_id"=>"2", "name"=>"a", "title"=>"aaaaaa", "author"=>"a", "content"=>"<p>a</p>"}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[36mPost Create (1.5ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "category_id") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["name", "a"], ["title", "aaaaaa"], ["content", "<p>a</p>"], ["created_at", "2020-12-25 13:43:22.093713"], ["updated_at", "2020-12-25 13:43:22.093713"], ["author", "a"], ["category_id", 2]]
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:36:in `block in create'
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 2.1ms | Allocations: 6608)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: posts.user_id):
+  
+app/controllers/posts_controller.rb:36:in `block in create'
+app/controllers/posts_controller.rb:35:in `create'
+Started GET "/posts" for ::1 at 2020-12-25 16:45:53 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 47.7ms | Allocations: 13695)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 128ms (Views: 108.2ms | ActiveRecord: 3.8ms | Allocations: 33297)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 16:45:55 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 23.9ms | Allocations: 3471)
+  Rendered posts/new.html.erb within layouts/application (Duration: 26.3ms | Allocations: 3798)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 62ms (Views: 51.2ms | ActiveRecord: 0.7ms | Allocations: 10124)
+
+
+Started POST "/posts" for ::1 at 2020-12-25 16:46:07 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"N2Z1kIYZfB+ChJi8Lh6hhezZP65czpSRGJs5zsdb/lX35/Wloq5vQ+VwX8M7xgnda0jBVpzeT6Kokiq6EEl7XQ==", "post"=>{"category_id"=>"2", "name"=>"проверка", "title"=>"ХОРОШО ТО КАК", "author"=>"УМНИЧКА", "content"=>"<p>кряка</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fb7f9f75018 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20201225-77451-1gkzzbj.jpg>, @original_filename="14.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"14.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (1.2ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "image", "user_id", "category_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "проверка"], ["title", "ХОРОШО ТО КАК"], ["content", "<p>кряка</p>"], ["created_at", "2020-12-25 13:46:08.331594"], ["updated_at", "2020-12-25 13:46:08.331594"], ["author", "УМНИЧКА"], ["image", "14.jpg"], ["user_id", 3], ["category_id", 2]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+Redirected to http://localhost:3000/posts/2
+Completed 302 Found in 610ms (ActiveRecord: 2.5ms | Allocations: 10227)
+
+
+Started GET "/posts/2" for ::1 at 2020-12-25 16:46:08 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.1ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 2]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered comments/_form.html.erb (Duration: 12.8ms | Allocations: 4808)
+  Rendered posts/show.html.erb within layouts/application (Duration: 46.3ms | Allocations: 16079)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 78ms (Views: 68.4ms | ActiveRecord: 3.9ms | Allocations: 21609)
+
+
+Started GET "/posts" for ::1 at 2020-12-25 17:00:34 +0300
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (6.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (5.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 49.7ms | Allocations: 3175)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (2.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 183ms (Views: 149.6ms | ActiveRecord: 17.1ms | Allocations: 8825)
+
+
+Started GET "/posts/new" for ::1 at 2020-12-25 17:00:36 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 21.9ms | Allocations: 3019)
+  Rendered posts/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 3101)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 69ms (Views: 55.9ms | ActiveRecord: 0.7ms | Allocations: 9270)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-12-25 17:00:40 +0300
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/edit.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 12.1ms | Allocations: 3092)
+  Rendered posts/edit.html.erb within layouts/application (Duration: 20.5ms | Allocations: 3330)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 51ms (Views: 39.3ms | ActiveRecord: 1.3ms | Allocations: 10189)
+
+

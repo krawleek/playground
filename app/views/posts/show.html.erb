@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.name %>
+</p>
 <p>
   <strong>Name:</strong>
   <%= @post.name %>
@@ -30,6 +33,13 @@
   <%= button_to 'Like', post_likes_path(@post), method: :post %>
 <% end %>
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+
+<% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
+<% if pre_favorite %>
+    <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
+<% else %>
+    <%= button_to 'Add to Favorite', post_favorites_path(@post), method: :post %>
+<% end %>
 
 <h2>Comments</h2>
 <%= render @post.comments %>
