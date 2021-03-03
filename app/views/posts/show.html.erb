@@ -26,7 +26,7 @@
   <%= @post.content %>
 </p>
 
-<% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
+<% pre_like = @post.likes.find { |like| like.user_id == current_user&.id} %>
 <% if pre_like %>
   <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
 <% else %>
@@ -34,7 +34,7 @@
 <% end %>
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
 
-<% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
+<% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user&.id} %>
 <% if pre_favorite %>
     <%= button_to 'Remove from Favorite', post_favorite_path(@post, pre_favorite), method: :delete %>
 <% else %>
