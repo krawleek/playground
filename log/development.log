@@ -8843,3 +8843,1282 @@ Processing by PostsController#edit as HTML
 Completed 200 OK in 51ms (Views: 39.3ms | ActiveRecord: 1.3ms | Allocations: 10189)
 
 
+Started GET "/" for ::1 at 2021-03-03 20:01:50 +0300
+  [1m[35m (4.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 382)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 250ms (Views: 214.7ms | ActiveRecord: 1.3ms | Allocations: 28124)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-03 20:01:59 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (1.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 211.1ms | Allocations: 11213)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 344ms (Views: 231.4ms | ActiveRecord: 3.9ms | Allocations: 30236)
+
+
+Started GET "/posts?category=%D0%B2%D0%B5%D1%89%D0%B8" for ::1 at 2021-03-03 20:02:03 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"вещи"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "вещи"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/views/posts/index.html.erb:22
+  Rendered posts/index.html.erb within layouts/application (Duration: 6.6ms | Allocations: 1447)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 26ms (Views: 21.5ms | ActiveRecord: 1.2ms | Allocations: 6905)
+
+
+Started GET "/posts?category=%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F" for ::1 at 2021-03-03 20:02:05 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"события"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "события"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 4]]
+  ↳ app/views/posts/index.html.erb:22
+  Rendered posts/index.html.erb within layouts/application (Duration: 49.7ms | Allocations: 1449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 80ms (Views: 74.5ms | ActiveRecord: 0.7ms | Allocations: 6944)
+
+
+Started GET "/categories/new" for ::1 at 2021-03-03 20:02:09 +0300
+Processing by CategoriesController#new as HTML
+  Rendering categories/new.html.erb within layouts/application
+  Rendered categories/_form.html.erb (Duration: 119.7ms | Allocations: 9798)
+  Rendered categories/new.html.erb within layouts/application (Duration: 129.3ms | Allocations: 10134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 171ms (Views: 168.2ms | ActiveRecord: 0.6ms | Allocations: 15838)
+
+
+Started GET "/categories" for ::1 at 2021-03-03 20:02:14 +0300
+Processing by CategoriesController#index as HTML
+  Rendering categories/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/categories/index.html.erb:16
+  Rendered categories/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 1303)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 0.4ms | Allocations: 6306)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-03 20:02:18 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 46.4ms | Allocations: 3137)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 68ms (Views: 63.8ms | ActiveRecord: 0.9ms | Allocations: 8594)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-03 20:02:20 +0300
+Processing by PostsController#new as HTML
+Filter chain halted as #<Proc:0x00007fb4d3f955d0 /Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-6.0.3.3/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 254)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-03 20:02:22 +0300
+Processing by PostsController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 329)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-03-03 20:02:22 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.1ms | Allocations: 597)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 2252)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 39ms (Views: 23.5ms | ActiveRecord: 0.8ms | Allocations: 14083)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-03-03 20:02:24 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7n1J778Ahx80aBf5iLZt0HzKHPuQcnGn2OItP8ebWLW2cYhV/BZJ1s1cSZo/rtzrbx2OmYaaIhgeKuog1BpD7Q==", "user"=>{"email"=>"lenusya.solodovnikova@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lenusya.solodovnikova@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/posts/new
+Completed 302 Found in 325ms (ActiveRecord: 0.6ms | Allocations: 6052)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-03 20:02:24 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 23.1ms | Allocations: 4652)
+  Rendered posts/new.html.erb within layouts/application (Duration: 31.8ms | Allocations: 4975)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 52ms (Views: 46.2ms | ActiveRecord: 0.9ms | Allocations: 11356)
+
+
+Started GET "/" for ::1 at 2021-03-03 20:02:30 +0300
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 40)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 35ms (Views: 33.3ms | ActiveRecord: 0.6ms | Allocations: 5706)
+
+
+Started GET "/posts?category=%D0%B2%D0%B5%D1%89%D0%B8" for ::1 at 2021-03-03 20:07:30 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"вещи"}
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "вещи"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (1.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 3]]
+  ↳ app/views/posts/index.html.erb:22
+  Rendered posts/index.html.erb within layouts/application (Duration: 29.9ms | Allocations: 1449)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 167ms (Views: 141.3ms | ActiveRecord: 3.0ms | Allocations: 7725)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-03 20:07:32 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 33.8ms | Allocations: 3000)
+  Rendered posts/new.html.erb within layouts/application (Duration: 35.7ms | Allocations: 3082)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 101ms (Views: 91.0ms | ActiveRecord: 1.0ms | Allocations: 9295)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-03 20:07:43 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 38.1ms | Allocations: 3128)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 74ms (Views: 61.3ms | ActiveRecord: 2.0ms | Allocations: 9428)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-03 20:07:46 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.7ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (1.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (1.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 16.0ms | Allocations: 4905)
+  Rendered posts/show.html.erb within layouts/application (Duration: 219.9ms | Allocations: 24395)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 235ms (Views: 211.6ms | ActiveRecord: 17.6ms | Allocations: 29930)
+
+
+Started POST "/posts/1/comments" for ::1 at 2021-03-03 20:07:51 +0300
+  
+SyntaxError (/Users/user/Documents/GitHub/playground/app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+... current_user.id))		redirect_to post_path(@post)
+...                  		^~~~~~~~~~~
+):
+  
+app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/" for ::1 at 2021-03-03 20:23:58 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 12.8ms | Allocations: 653)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 193ms (Views: 146.1ms | ActiveRecord: 2.4ms | Allocations: 26455)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-03 20:24:02 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.8ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 80.8ms | Allocations: 9891)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 163ms (Views: 113.2ms | ActiveRecord: 3.9ms | Allocations: 24805)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-03 20:24:14 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 69.0ms | Allocations: 10095)
+  Rendered posts/new.html.erb within layouts/application (Duration: 71.3ms | Allocations: 10433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 130ms (Views: 109.3ms | ActiveRecord: 0.6ms | Allocations: 16732)
+
+
+Started POST "/posts" for ::1 at 2021-03-03 20:24:53 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"SliEkRbguToTSmZP9atR+WplSHw4bCLHsjgYS1RlHuHnzfRBy7+XPwpZKwhIZ1/Dhw2Z3XuId6sPBOLKX+FpZw==", "post"=>{"category_id"=>"2", "name"=>"проверка", "title"=>"ХОРОШО ТО КАК", "author"=>"кто ", "content"=>"<p>лолес кекус</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f879c25ff78 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20210303-79820-pcfb3d.jpg>, @original_filename="Frame 1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Frame 1.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Post"}
+Filter chain halted as #<Proc:0x00007f87993c8c00 /Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-6.0.3.3/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Started POST "/posts" for ::1 at 2021-03-03 20:24:54 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"SliEkRbguToTSmZP9atR+WplSHw4bCLHsjgYS1RlHuHnzfRBy7+XPwpZKwhIZ1/Dhw2Z3XuId6sPBOLKX+FpZw==", "post"=>{"category_id"=>"2", "name"=>"проверка", "title"=>"ХОРОШО ТО КАК", "author"=>"кто ", "content"=>"<p>лолес кекус</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007f87995483f0 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20210303-79820-1dxbkwt.jpg>, @original_filename="Frame 1.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"Frame 1.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (3.0ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "image", "user_id", "category_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "проверка"], ["title", "ХОРОШО ТО КАК"], ["content", "<p>лолес кекус</p>"], ["created_at", "2021-03-03 17:24:55.072770"], ["updated_at", "2021-03-03 17:24:55.072770"], ["author", "кто "], ["image", "Frame_1.jpg"], ["user_id", 3], ["category_id", 2]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+Redirected to http://localhost:3000/posts/3
+Completed 302 Found in 868ms (ActiveRecord: 5.1ms | Allocations: 10509)
+
+
+Started GET "/posts/3" for ::1 at 2021-03-03 20:24:55 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.6ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 3]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered comments/_form.html.erb (Duration: 20.0ms | Allocations: 5110)
+  Rendered posts/show.html.erb within layouts/application (Duration: 57.9ms | Allocations: 17155)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+Completed 200 OK in 97ms (Views: 88.5ms | ActiveRecord: 4.8ms | Allocations: 28560)
+
+
+Started POST "/posts/3/comments" for ::1 at 2021-03-03 20:25:31 +0300
+  
+SyntaxError (/Users/user/Documents/GitHub/playground/app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+... current_user.id))		redirect_to post_path(@post)
+...                  		^~~~~~~~~~~
+):
+  
+app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+app/controllers/comments_controller.rb:5: syntax error, unexpected local variable or method, expecting `end'
+Started GET "/" for ::1 at 2021-03-15 20:33:46 +0300
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 15.7ms | Allocations: 776)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.6ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 200 OK in 272ms (Views: 219.9ms | ActiveRecord: 31.7ms | Allocations: 29099)
+
+
+Started GET "/" for ::1 at 2021-03-20 09:01:58 +0300
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 268)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (3.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 1.3ms | Allocations: 293)
+Completed 200 OK in 394ms (Views: 363.4ms | ActiveRecord: 7.1ms | Allocations: 34334)
+
+
+Started GET "/search?term=%D0%BB%D1%83%D0%BA" for ::1 at 2021-03-20 09:02:05 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"лук"}
+Completed 406 Not Acceptable in 68ms (ActiveRecord: 0.6ms | Allocations: 10830)
+
+
+  
+ActionController::MissingExactTemplate (SearchController#search is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/search?term=%D0%BB%D1%83%D0%BA" for ::1 at 2021-03-20 09:03:12 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"лук"}
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.0ms | Allocations: 743)
+
+
+  
+ActionController::MissingExactTemplate (SearchController#search is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/search?term=%D0%BB%D1%83%D0%BA" for ::1 at 2021-03-20 09:05:07 +0300
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"лук"}
+Completed 406 Not Acceptable in 66ms (ActiveRecord: 0.6ms | Allocations: 7909)
+
+
+  
+ActionController::MissingExactTemplate (SearchController#search is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.3) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.3) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.3) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.3) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.3) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.3) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.3) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.3) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.3) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.3) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.3) lib/action_dispatch/routing/route_set.rb:834:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.3) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.3) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.3) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.3) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.3) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.3) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/search?term=%D0%BB%D1%83%D0%BA" for ::1 at 2021-03-20 09:09:07 +0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"лук"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 750.4ms | Allocations: 7166)
+Completed 500 Internal Server Error in 805ms (ActiveRecord: 0.4ms | Allocations: 19229)
+
+
+  
+ActionView::Template::Error ([404] {"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index [posts]","resource.type":"index_or_alias","resource.id":"posts","index_uuid":"_na_","index":"posts"}],"type":"index_not_found_exception","reason":"no such index [posts]","resource.type":"index_or_alias","resource.id":"posts","index_uuid":"_na_","index":"posts"},"status":404}):
+    2:  
+    3: <% if @posts %>
+    4:   <ul class="search_results">
+    5:     <% @posts.each do |post| %>
+    6:       <li>
+    7:         <h3>
+    8:           <%= link_to post.try(:highlight).try(:title) ?
+  
+app/views/search/search.html.erb:5
+Started GET "/search?term=%D0%BB%D1%83%D0%BA" for ::1 at 2021-03-20 09:18:39 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"лук"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 150.0ms | Allocations: 1689)
+Completed 500 Internal Server Error in 168ms (ActiveRecord: 0.0ms | Allocations: 2173)
+
+
+  
+ActionView::Template::Error ([404] {"error":{"root_cause":[{"type":"index_not_found_exception","reason":"no such index [posts]","resource.type":"index_or_alias","resource.id":"posts","index_uuid":"_na_","index":"posts"}],"type":"index_not_found_exception","reason":"no such index [posts]","resource.type":"index_or_alias","resource.id":"posts","index_uuid":"_na_","index":"posts"},"status":404}):
+    2:  
+    3: <% if @posts %>
+    4:   <ul class="search_results">
+    5:     <% @posts.each do |post| %>
+    6:       <li>
+    7:         <h3>
+    8:           <%= link_to post.try(:highlight).try(:title) ?
+  
+app/views/search/search.html.erb:5
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[33mPost Import (464.1ms)[0m  {"count":3}
+Started GET "/" for ::1 at 2021-03-20 09:23:28 +0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 4.7ms | Allocations: 268)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 500 Internal Server Error in 202ms (ActiveRecord: 2.7ms | Allocations: 35718)
+
+
+  
+ActionView::Template::Error (Missing partial search/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/user/Documents/GitHub/playground/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/ckeditor-5.1.0/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.3/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.3/app/views"
+):
+    20:         <% else %>
+    21:            <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
+    22:         <% end %>
+    23:         <%= render 'search/form' %>
+    24:     </div>
+    25:     <% if notice %>
+    26:       <p class="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for ::1 at 2021-03-20 09:23:35 +0300
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 37)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.3ms | Allocations: 6636)
+
+
+  
+ActionView::Template::Error (Missing partial search/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/user/Documents/GitHub/playground/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/ckeditor-5.1.0/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.3/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.3/app/views"
+):
+    20:         <% else %>
+    21:            <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
+    22:         <% end %>
+    23:         <%= render 'search/form' %>
+    24:     </div>
+    25:     <% if notice %>
+    26:       <p class="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for ::1 at 2021-03-20 09:23:49 +0300
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.2ms | Allocations: 8532)
+
+
+  
+ActionView::Template::Error (Missing partial search/_form with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/user/Documents/GitHub/playground/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/devise-4.7.3/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/ckeditor-5.1.0/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actiontext-6.0.3.3/app/views"
+  * "/Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionmailbox-6.0.3.3/app/views"
+):
+    20:         <% else %>
+    21:            <%= link_to 'Sign In', new_user_session_path %> | <%= link_to 'Sign Up', new_user_registration_path %>
+    22:         <% end %>
+    23:         <%= render 'search/form' %>
+    24:     </div>
+    25:     <% if notice %>
+    26:       <p class="notice"><%= notice %></p>
+  
+app/views/layouts/application.html.erb:23
+Started GET "/" for ::1 at 2021-03-20 10:19:34 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PromoController#index as HTML
+  Rendering promo/index.html.erb within layouts/application
+  Rendered promo/index.html.erb within layouts/application (Duration: 32.5ms | Allocations: 134)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (4.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (5.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 9.7ms | Allocations: 289)
+Completed 200 OK in 315ms (Views: 279.5ms | ActiveRecord: 9.4ms | Allocations: 7794)
+
+
+Started GET "/search?term=%D0%BB%D1%83%D0%BA" for ::1 at 2021-03-20 10:19:40 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"лук"}
+  [1m[33mPost Search (2489.6ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"лук","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"лук","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"лук","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"лук","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 6.1ms | Allocations: 441)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 1.3ms | Allocations: 125)
+Completed 200 OK in 2978ms (Views: 82.8ms | Searchkick: 2489.6ms | ActiveRecord: 2.7ms | Allocations: 17847)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-20 10:25:23 +0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (12.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (9.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 170.8ms | Allocations: 10704)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (7.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 1.8ms | Allocations: 120)
+Completed 200 OK in 405ms (Views: 324.7ms | ActiveRecord: 30.4ms | Allocations: 18618)
+
+
+Started GET "/search?term=%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE" for ::1 at 2021-03-20 10:25:30 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"хорошо"}
+  [1m[33mPost Search (173.8ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 0.4ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.2ms | Allocations: 124)
+Completed 200 OK in 200ms (Views: 20.1ms | Searchkick: 173.8ms | ActiveRecord: 0.3ms | Allocations: 7732)
+
+
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPost Load (0.4ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[35m (15.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "posts"[0m
+Started GET "/search?term=%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE" for ::1 at 2021-03-20 10:26:39 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"хорошо"}
+  [1m[33mPost Search (24.2ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 0.2ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.3ms | Allocations: 123)
+Completed 200 OK in 87ms (Views: 51.1ms | Searchkick: 24.2ms | ActiveRecord: 0.9ms | Allocations: 7711)
+
+
+Started GET "/search?term=%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE" for ::1 at 2021-03-20 10:26:43 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"хорошо"}
+  [1m[33mPost Search (14.1ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (1.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.3ms | Allocations: 123)
+Completed 200 OK in 53ms (Views: 33.1ms | Searchkick: 14.1ms | ActiveRecord: 1.6ms | Allocations: 7710)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-20 10:26:45 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (2.5ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 30.3ms | Allocations: 3950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.3ms | Allocations: 119)
+Completed 200 OK in 78ms (Views: 68.7ms | ActiveRecord: 3.7ms | Allocations: 10445)
+
+
+Started GET "/search?term=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-20 10:26:51 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"места"}
+  [1m[33mPost Search (25.5ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"места","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"места","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"места","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"места","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.4ms | Allocations: 123)
+Completed 200 OK in 71ms (Views: 36.4ms | Searchkick: 25.5ms | ActiveRecord: 1.0ms | Allocations: 7716)
+
+
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-20 10:27:46 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 3953)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.2ms | Allocations: 119)
+Completed 200 OK in 61ms (Views: 53.6ms | ActiveRecord: 1.3ms | Allocations: 10466)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-20 10:27:48 +0300
+Processing by PostsController#new as HTML
+Filter chain halted as #<Proc:0x00007fc6fa3769c8 /Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-6.0.3.3/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 258)
+
+
+Started GET "/posts/new" for ::1 at 2021-03-20 10:27:49 +0300
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "categories"."name", "categories"."id" FROM "categories"[0m
+  ↳ app/views/posts/_form.html.erb:15
+  Rendered posts/_form.html.erb (Duration: 259.8ms | Allocations: 10231)
+  Rendered posts/new.html.erb within layouts/application (Duration: 265.4ms | Allocations: 10555)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered search/_form.html.erb (Duration: 0.5ms | Allocations: 128)
+Completed 200 OK in 304ms (Views: 285.7ms | ActiveRecord: 1.0ms | Allocations: 17044)
+
+
+Started POST "/posts" for ::1 at 2021-03-20 10:28:10 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"VPXedliob+VL8U6yhNspOn0XnBEsXFVZ22udnljnEA35YK6mhfdB4FLiA/U5FycAkH9NsG+4ADVmV2cfU2Nniw==", "post"=>{"category_id"=>"2", "name"=>"проверка", "title"=>"указываем", "author"=>"автора", "content"=>"<p>кря</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc6fa33e410 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20210320-64816-1xe8lzu.jpg>, @original_filename="0ffetLsGQyA.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"0ffetLsGQyA.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Post"}
+Filter chain halted as #<Proc:0x00007fc6fa3769c8 /Users/user/.rbenv/versions/2.7.1/lib/ruby/gems/2.7.0/gems/actionpack-6.0.3.3/lib/action_controller/metal/http_authentication.rb:73> rendered or redirected
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms | Allocations: 348)
+
+
+Started POST "/posts" for ::1 at 2021-03-20 10:28:11 +0300
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"VPXedliob+VL8U6yhNspOn0XnBEsXFVZ22udnljnEA35YK6mhfdB4FLiA/U5FycAkH9NsG+4ADVmV2cfU2Nniw==", "post"=>{"category_id"=>"2", "name"=>"проверка", "title"=>"указываем", "author"=>"автора", "content"=>"<p>кря</p>", "image"=>#<ActionDispatch::Http::UploadedFile:0x00007fc6fcf3a3c0 @tempfile=#<Tempfile:/var/folders/j8/kgy0_yx519z96kpkwmwssyhm0000gp/T/RackMultipart20210320-64816-ven97w.jpg>, @original_filename="0ffetLsGQyA.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"post[image]\"; filename=\"0ffetLsGQyA.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Create Post"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[36mPost Create (1.1ms)[0m  [1m[32mINSERT INTO "posts" ("name", "title", "content", "created_at", "updated_at", "author", "image", "user_id", "category_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "проверка"], ["title", "указываем"], ["content", "<p>кря</p>"], ["created_at", "2021-03-20 07:28:11.811259"], ["updated_at", "2021-03-20 07:28:11.811259"], ["author", "автора"], ["image", "0ffetLsGQyA.jpg"], ["user_id", 3], ["category_id", 2]]
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:37:in `block in create'
+  [1m[33mPost Store (286.6ms)[0m  {"id":4}
+Redirected to http://localhost:3000/posts/4
+Completed 302 Found in 1273ms (Searchkick: 286.6ms | ActiveRecord: 3.3ms | Allocations: 19582)
+
+
+Started GET "/posts/4" for ::1 at 2021-03-20 10:28:12 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.3ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered comments/_form.html.erb (Duration: 39.1ms | Allocations: 5145)
+  Rendered posts/show.html.erb within layouts/application (Duration: 122.6ms | Allocations: 17421)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered search/_form.html.erb (Duration: 0.4ms | Allocations: 119)
+Completed 200 OK in 169ms (Views: 161.0ms | ActiveRecord: 4.0ms | Allocations: 23175)
+
+
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:28:20 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+  [1m[33mPost Search (1048.6ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"проверка","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"проверка","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"проверка","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"проверка","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 2.3ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.3ms | Allocations: 125)
+Completed 200 OK in 1140ms (Views: 83.9ms | Searchkick: 1048.6ms | ActiveRecord: 0.4ms | Allocations: 7734)
+
+
+Started GET "/posts?category=%D0%BC%D0%B5%D1%81%D1%82%D0%B0" for ::1 at 2021-03-20 10:28:27 +0300
+Processing by PostsController#index as HTML
+  Parameters: {"category"=>"места"}
+  [1m[36mCategory Load (1.7ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "места"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:9:in `index'
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (4.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories"[0m
+  ↳ app/views/posts/index.html.erb:4
+  [1m[36mPost Load (0.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."category_id" = ?[0m  [["category_id", 2]]
+  ↳ app/views/posts/index.html.erb:22
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  [1m[36mCACHE Category Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:24
+  Rendered posts/index.html.erb within layouts/application (Duration: 46.3ms | Allocations: 4768)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.5ms | Allocations: 119)
+Completed 200 OK in 122ms (Views: 108.7ms | ActiveRecord: 6.6ms | Allocations: 11274)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-20 10:28:40 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 4.2ms | Allocations: 608)
+  Rendered posts/show.html.erb within layouts/application (Duration: 64.4ms | Allocations: 10577)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered search/_form.html.erb (Duration: 0.2ms | Allocations: 118)
+Completed 200 OK in 101ms (Views: 88.3ms | ActiveRecord: 5.9ms | Allocations: 16014)
+
+
+Started GET "/posts/4" for ::1 at 2021-03-20 10:28:43 +0300
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 4]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:47
+  Rendered comments/_form.html.erb (Duration: 5.3ms | Allocations: 608)
+  Rendered posts/show.html.erb within layouts/application (Duration: 33.4ms | Allocations: 6631)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.9ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered search/_form.html.erb (Duration: 0.2ms | Allocations: 118)
+Completed 200 OK in 130ms (Views: 116.0ms | ActiveRecord: 2.7ms | Allocations: 12173)
+
+
+  [1m[36mPost Load (1.3ms)[0m  [1m[34mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  [1m[33mPost Import (431.4ms)[0m  {"count":4}
+Started GET "/search?term=%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%BE" for ::1 at 2021-03-20 10:31:42 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"хорошо"}
+  [1m[33mPost Search (52.5ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"хорошо","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 1.8ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (1.4ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 4.0ms | Allocations: 124)
+Completed 200 OK in 214ms (Views: 130.6ms | Searchkick: 52.5ms | ActiveRecord: 1.8ms | Allocations: 7728)
+
+
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:31:50 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+  [1m[33mPost Search (19.2ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"match":{"text.analyzed":{"query":"проверка","boost":10,"operator":"and","analyzer":"searchkick_search"}}},{"match":{"text.analyzed":{"query":"проверка","boost":10,"operator":"and","analyzer":"searchkick_search2"}}},{"match":{"text.analyzed":{"query":"проверка","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}},{"match":{"text.analyzed":{"query":"проверка","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true}}}]}}]}},"highlight":{"fields":{"text.analyzed":{}},"fragment_size":0},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 0.1ms | Allocations: 19)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.3ms | Allocations: 123)
+Completed 200 OK in 48ms (Views: 23.5ms | Searchkick: 19.2ms | ActiveRecord: 0.6ms | Allocations: 8620)
+
+
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:36:31 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+  [1m[33mPost Search (818.4ms)[0m  posts_development/_search {"query":{"bool":{"should":[{"dis_max":{"queries":[{"multi_match":{"query":"проверка","boost":10,"operator":"and","analyzer":"searchkick_search","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"проверка","boost":10,"operator":"and","analyzer":"searchkick_search2","fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"проверка","boost":1,"operator":"and","analyzer":"searchkick_search","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}},{"multi_match":{"query":"проверка","boost":1,"operator":"and","analyzer":"searchkick_search2","fuzziness":1,"prefix_length":0,"max_expansions":3,"fuzzy_transpositions":true,"fields":["*.analyzed"],"type":"best_fields"}}]}}]}},"timeout":"11s","_source":false,"size":10000}
+  Rendering search/search.html.erb within layouts/application
+  [1m[36mPost Load (0.6ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" IN (?, ?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/search/search.html.erb:5
+  Rendered search/search.html.erb within layouts/application (Duration: 38.0ms | Allocations: 7313)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.8ms | Allocations: 125)
+Completed 200 OK in 1102ms (Views: 242.2ms | Searchkick: 818.4ms | ActiveRecord: 6.3ms | Allocations: 28712)
+
+
+Started GET "/posts/1" for ::1 at 2021-03-20 10:54:06 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:74:in `set_post'
+  Rendering posts/show.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:4
+  [1m[36mLike Load (0.2ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:29
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:35
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites" WHERE "favorites"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/posts/show.html.erb:37
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ?[0m  [["post_id", 1]]
+  ↳ app/views/posts/show.html.erb:45
+  Rendered collection of templates [0 times] (Duration: 0.0ms | Allocations: 3)
+  Rendered comments/_form.html.erb (Duration: 21.3ms | Allocations: 4610)
+  Rendered posts/show.html.erb within layouts/application (Duration: 137.4ms | Allocations: 27194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.3ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  Rendered search/_form.html.erb (Duration: 0.4ms | Allocations: 119)
+Completed 200 OK in 325ms (Views: 231.1ms | ActiveRecord: 5.4ms | Allocations: 42608)
+
+
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:56:46 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/user/Documents/GitHub/playground/app/controllers/search_controller.rb:10: syntax error, unexpected end-of-input, expecting `end'):
+  
+app/controllers/search_controller.rb:10: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/search_controller.rb:10: syntax error, unexpected end-of-input, expecting `end'
+app/controllers/search_controller.rb:10: syntax error, unexpected end-of-input, expecting `end'
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:57:07 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+Completed 500 Internal Server Error in 42ms (ActiveRecord: 0.9ms | Allocations: 5832)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/models/post.rb:17:in `search'
+app/controllers/search_controller.rb:7:in `search'
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:57:57 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 237.7ms | Allocations: 841)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.8ms | Allocations: 125)
+Completed 200 OK in 403ms (Views: 385.2ms | ActiveRecord: 2.3ms | Allocations: 20413)
+
+
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:58:01 +0300
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (Duration: 32.8ms | Allocations: 826)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."display_in_navbar" = ?[0m  [["display_in_navbar", 1]]
+  ↳ app/views/layouts/application.html.erb:15
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:18
+  Rendered search/_form.html.erb (Duration: 0.3ms | Allocations: 123)
+Completed 200 OK in 57ms (Views: 55.6ms | ActiveRecord: 0.4ms | Allocations: 6761)
+
+
+Started GET "/search?term=%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0" for ::1 at 2021-03-20 10:58:17 +0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SearchController#search as HTML
+  Parameters: {"term"=>"проверка"}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.5ms | Allocations: 5761)
+
+
+  
+ArgumentError (wrong number of arguments (given 2, expected 1)):
+  
+app/models/post.rb:17:in `search'
+app/controllers/search_controller.rb:7:in `search'

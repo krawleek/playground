@@ -23,7 +23,9 @@ gem 'devise', '~> 4.2'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'searchkick'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

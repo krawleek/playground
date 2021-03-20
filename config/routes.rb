@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   get 'posts/index'
 
+  get "search", to: "search#search"
+
   get 'promo', to: 'promo#index'
   get 'about', to: 'about#index'
 

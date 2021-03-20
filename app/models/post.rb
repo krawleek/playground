@@ -1,4 +1,7 @@
+require 'elasticsearch/model' 
 class Post < ApplicationRecord
+		include Elasticsearch::Model
+		include Elasticsearch::Model::Callbacks
 	#	belongs_to :user
 		belongs_to :category
 		validates :name, :presence => true
@@ -10,4 +13,26 @@ class Post < ApplicationRecord
 		has_many :favorites, dependent: :destroy
 		mount_uploader :image, ImageUploader
 
+searchkick
+def self.search(query)
+  __elasticsearch__.search(
+    {
+      query: {
+        multi_match: {
+          query: query,
+          fields: ['title', 'content']
+        }
+      },
+      highlight: {
+        pre_tags: ['<em>'],
+        post_tags: ['</em>'],
+        fields: {
+          title: {},
+          content: {}
+        }
+      }
+    }
+  )
 end
+end
+
