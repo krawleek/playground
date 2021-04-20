@@ -1,5 +1,7 @@
 require 'elasticsearch/model' 
 class Post < ApplicationRecord
+		scope :filter_by_user, -> (user) { where user: user }
+		scope :filter_by_category, -> (category) { where category: category }
 		include Elasticsearch::Model
 		include Elasticsearch::Model::Callbacks
 	#	belongs_to :user
@@ -14,13 +16,13 @@ class Post < ApplicationRecord
 		mount_uploader :image, ImageUploader
 
 searchkick
-def self.search(query)
+def self.search(query, params)
   __elasticsearch__.search(
     {
       query: {
         multi_match: {
           query: query,
-          fields: ['title', 'content']
+          fields: params[:fields]
         }
       },
       highlight: {

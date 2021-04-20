@@ -5,12 +5,10 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-      if params.has_key?(:category)
-        @category = Category.find_by_name(params[:category])
-        @posts = Post.where(category: @category)
-      else
-        @posts = Post.all
-      end
+    @posts = Post.where(nil)
+    filtering_params(params).each do |key, value|
+     @posts = @posts.public_send("filter_by_#{key}", value) if value.present?
+    end
   end
 
   # GET /posts/1
@@ -69,6 +67,9 @@ class PostsController < ApplicationController
   end
 
   private
+    def filtering_params(params)
+      params.slice(:user, :category)
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
