@@ -4,9 +4,8 @@ class Post < ApplicationRecord
 		scope :filter_by_category, -> (category) { where category: category }
 		include Elasticsearch::Model
 		include Elasticsearch::Model::Callbacks
-	#	belongs_to :user
+		belongs_to :user
 		belongs_to :category
-		validates :name, :presence => true
 		validates :title, :presence => true,
 											:length => { :minimum => 5 }
 

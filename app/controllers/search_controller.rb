@@ -4,7 +4,7 @@ class SearchController < ApplicationController
       @posts = []
     else
       term = params[:term]
-      @posts = Post.search term, fields: [:content, :name, :title, :author], highlight:  true
+      @posts = Post.search term, fields: [:content, :title, :author], highlight:  true
     end
   end
 
